@@ -13,20 +13,35 @@
       </router-link>
     
       <div class="flex gap-3 flex-1 justify-end"> <!-- flex-1 - flex item, allowed to grow -->
-        <i class="fa-solid fa-circle-info text-xl hover:text-weather-secondary cursor-pointer duration-200"></i> <!-- duration - fadein/out;  -->
+        <i class="fa-solid fa-circle-info text-xl hover:text-weather-secondary cursor-pointer duration-200"
+          @click="toggleModal"></i> <!-- duration - fadein/out;  -->
         <i class="fa-solid fa-plus text-xl hover:text-weather-secondary cursor-pointer duration-200"></i>
       </div>
 
     </nav>
   </header>
+  <BaseModal :modalActive="modalActive" @close-modal="toggleModal">
+    <p>TBD...</p>
+  </BaseModal>
 </template>
 
 <script>
-
+  import BaseModal from './BaseModal.vue'
+  import { ref } from 'vue'
 
   export default {
     components: {
+      BaseModal
     },
 
+    setup() {
+      const modalActive = ref(false);
+      const toggleModal = () => {
+        modalActive.value = !modalActive.value;
+        console.log(modalActive.value);
+      };
+
+      return { modalActive, toggleModal }
+    }
 }
 </script>
