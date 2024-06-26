@@ -3,7 +3,7 @@
     <nav 
       class="container flex flex-col sm:flex-row 
       items-center gap-4 text-white py-6"
-    > <!-- container - same as bootstrap; gap-4 - 16px gap; py-6 - 24px padding; -->
+    > <!-- container - same as bootstrap (when screen is sm - flex-col); gap-4 - 16px gap; py-6 - 24px padding; -->
     
       <router-link :to="{name: 'home'}">
         <div class="flex items-center gap-3"> 
