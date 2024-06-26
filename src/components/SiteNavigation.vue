@@ -21,7 +21,14 @@
     </nav>
   </header>
   <BaseModal :modalActive="modalActive" @close-modal="toggleModal">
-    <p>TBD...</p>
+    <h1 class="text-2xl font-bold">About</h1>
+    <p>Some description...</p>
+    <h1 class="text-2xl font-bold">How it works</h1>
+    <ol class="list-decimal px-4 text-sm">
+      <li class="py-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, est dolore sed quis nulla laborum sit vitae nisi officia suscipit aut.</li>
+      <li class="py-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptate delectus odit quo a magni molestiae unde libero sed! Aperiam veritatis dolores earum ut!</li>
+      <li class="py-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, quidem.</li>
+    </ol>
   </BaseModal>
 </template>
 
