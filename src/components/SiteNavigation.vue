@@ -15,7 +15,9 @@
       <div class="flex gap-3 flex-1 justify-end"> <!-- flex-1 - flex item, allowed to grow -->
         <i class="fa-solid fa-circle-info text-xl hover:text-weather-secondary cursor-pointer duration-200"
           @click="toggleModal"></i> <!-- duration - fadein/out;  -->
-        <i class="fa-solid fa-plus text-xl hover:text-weather-secondary cursor-pointer duration-200"></i>
+        <i class="fa-solid fa-plus text-xl hover:text-weather-secondary cursor-pointer duration-200"
+          @click="addCity"
+          v-if="route.query.preview"></i>
       </div>
 
     </nav>
@@ -35,6 +37,8 @@
 <script>
   import BaseModal from './BaseModal.vue'
   import { ref } from 'vue'
+  import { uid } from 'uid'; // id for items in local storage
+  import { useRoute, useRouter } from 'vue-router'; // for url usage (params and query)
 
   export default {
     components: {
@@ -48,7 +52,38 @@
         console.log(modalActive.value);
       };
 
-      return { modalActive, toggleModal }
+      const savedCities = ref([]);
+      const route = useRoute();
+      const router = useRouter();
+      const addCity = () => {
+        console.log('Add City');
+
+      // WORKING WITH LOCAL STORAGE 
+        if (localStorage.getItem('savedCities')) {
+          savedCities.value = JSON.parse(localStorage.getItem('savedCities'));
+        }
+
+        const locationObject = {
+          id: uid(),
+          state: route.params.state,
+          city: route.params.city,
+          coords: {
+            lat: route.query.lat,
+            lng: route.query.lng
+          }
+        };
+
+        savedCities.value.push(locationObject);
+
+        localStorage.setItem('savedCities', JSON.stringify(savedCities.value));
+
+        let query = Object.assign({}, route.query); // copy query
+        delete query.preview; // remove preview from query
+        //query.id = locationObject.id; // add id to query
+        router.push({ query });
+      };
+
+      return { modalActive, toggleModal, addCity, route }
     }
 }
 </script>
