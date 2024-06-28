@@ -25,7 +25,6 @@
       }
 
       const weatherData = await getWeatherData();
-
       return {weatherData}
     }
   }

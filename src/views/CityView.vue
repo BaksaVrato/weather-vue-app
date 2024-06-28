@@ -1,6 +1,14 @@
 <template>
   <div>
-    <AsyncCityView />
+    <Suspense> <!-- Handle async components -->
+
+      <AsyncCityView /> <!-- default slot -->
+
+      <template #fallback> <!-- slot shown while fetching -->
+        <p>Loading...</p>
+      </template>
+
+    </Suspense>
   </div>
 
 </template>
