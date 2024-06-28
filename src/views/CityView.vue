@@ -1,9 +1,19 @@
 <template>
-  <p>This is the city view</p>
+  <div>
+    <AsyncCityView />
+  </div>
+
 </template>
 
 <script>
+import AsyncCityView from './AsyncCityView.vue'
+
   export default {
+
+    components: {
+      AsyncCityView
+    }
+
 
   }
 </script>
