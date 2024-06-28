@@ -7,7 +7,7 @@
       <template #fallback> <!-- slot shown while fetching -->
         <p>Loading...</p>
       </template>
-
+ 
     </Suspense>
   </div>
 
