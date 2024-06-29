@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col flex-1 items-center">
-    <div v-if="route.query.preview" class="p-4 bg-weather-secondary w-full flex flex-col items-center">
+    <div v-if="route.query.preview === 'true'" class="p-4 bg-weather-secondary w-full flex flex-col items-center">
       <AnimatedPlaceholderVue class="w-1/3"/>
     </div>
     <!-- weather data -->

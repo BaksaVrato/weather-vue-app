@@ -56,12 +56,28 @@ export default {
     const queryTimeout = ref(null);
     const searchError = ref(false);
 
+    
+
     const router = useRouter(); // used for routing
     const previewCity = (searchResults) => {
-      const [city, state] = searchResults.place_name.split(',');
+      let [city, state] = searchResults.place_name.split(',');
       searchQuery.value = `${city} ${state}`;
       mapboxSearchResults.value = null;
       
+      let preview = true;
+      JSON.parse(localStorage.getItem('savedCities')).forEach((c) => {
+        console.log("=================");
+        console.log(c.state + ' ' + state.replace(/\s+/g, '') );
+        console.log("-----------------");
+        console.log(c.city + ' ' + city);
+        console.log("-----------------");
+        if (c.city == city && c.state == state.replace(/\s+/g, '')) {
+          preview = false;
+        }
+      })
+
+      console.log(preview);
+
       // push view into router (cityView concretely)
       router.push({ 
         name: 'cityView', // name of view
@@ -70,9 +86,10 @@ export default {
           state: state.replaceAll(' ', '') // removes space from front of the city name (to have the url cleaner)
         },
         query: { // query parameters (shown in URL)
+          id: searchResults.id,
           lat: searchResults.geometry.coordinates[1], 
           lng: searchResults.geometry.coordinates[0], 
-          preview: true
+          preview: preview
         }
       });
     };

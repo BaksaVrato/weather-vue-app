@@ -17,7 +17,7 @@
           @click="toggleModal"></i> <!-- duration - fadein/out;  -->
         <i class="fa-solid fa-plus text-xl hover:text-weather-secondary cursor-pointer duration-200"
           @click="addCity"
-          v-if="route.query.preview"></i>
+          v-if="route.query.preview === 'true'"></i>
       </div>
 
     </nav>
@@ -78,7 +78,7 @@
         localStorage.setItem('savedCities', JSON.stringify(savedCities.value));
 
         let query = Object.assign({}, route.query); // copy query
-        delete query.preview; // remove preview from query
+        query.preview = false; // remove preview from query
         query.id = locationObject.id; // add id to query
         router.replace({ query });
       };
