@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import AsyncCityView from './AsyncCityView.vue'
+import AsyncCityView from '../components/AsyncCityView.vue'
 
   export default {
 

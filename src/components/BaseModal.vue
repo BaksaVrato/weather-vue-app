@@ -4,7 +4,7 @@
       <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center px-8"
       v-show="modalActive"
     >
-      <div class="py-4 px-5 bg-white rounded-lg max-w-sm self-start mt-24" >
+      <div class="py-4 px-5 bg-white rounded-lg max-w-sm self-start mt-24 " >
 
         <slot/>
 
