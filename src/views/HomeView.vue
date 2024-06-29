@@ -20,7 +20,16 @@
 
         <li v-if="!searchError && mapboxSearchResults.length === 0">No results found.</li>
       </ul>
-
+         <!-- <CityList /> -->
+      <div class="flex flex-col gap-4">
+        <p>List</p>
+        <Suspense>
+          <CityList />
+          <template #fallback>
+            <p>Loading...</p>
+          </template>
+        </Suspense>
+      </div>
     </div>
   </main>
 
@@ -30,11 +39,14 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'  // used for routing
+import CityList from '../components/CityList.vue';
 
 export default {
 
+  components: {
+    CityList
+  },
   setup() { 
-
     const MAPBOX_TOKEN = 'pk.eyJ1IjoidnJ1dHVwIiwiYSI6ImNscGFhODk0MjA1eGcya3FyNmdtMnZ6dmQifQ.vb2ruBp2N1C0HThIrspi8A';
 
     const searchQuery = ref('');
@@ -85,11 +97,13 @@ export default {
       }, 300);
     };
 
-    return { searchQuery, getSearchResults, mapboxSearchResults, searchError, previewCity }
+    return { 
+      searchQuery, 
+      getSearchResults, 
+      mapboxSearchResults, 
+      searchError, 
+      previewCity
+    }
   }
 }
 </script>
-
-<style>
-
-</style>
