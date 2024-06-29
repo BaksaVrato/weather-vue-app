@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 bg-weather-primary shadow-lg"> <!-- sticky top-0 - fixed on top -->
+  <header class="fixed z-40 w-full top-0 bg-weather-primary shadow-lg"> <!-- fixed top-0 - fixed on top -->
     <nav 
       class="container flex flex-col sm:flex-row 
       items-center gap-4 text-white py-6"

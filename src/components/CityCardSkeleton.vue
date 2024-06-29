@@ -9,7 +9,7 @@
     <div class="flex flex-col self-end">
       <div class="flex flex-col gap-2 h-16">
         <AnimatedPlaceholderVue class="h-10 w-16 flex self-end"/>
-        <AnimatedPlaceholderVue class="h-4 w-24"/>
+        <AnimatedPlaceholderVue class="h-4 w-44"/>
       </div>
     </div>
   </div>

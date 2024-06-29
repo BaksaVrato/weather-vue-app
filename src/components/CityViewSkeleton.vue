@@ -17,7 +17,7 @@
     <!-- hourly forecast -->
     <div class="max-w-sreen-md w-full py-12">
       <div class="mx-8 text-white">
-          <AnimatedPlaceholderVue class="h-[172px] w-1/2"/>
+          <AnimatedPlaceholderVue class="h-[172px] w-full"/>
       </div>
     </div>
   

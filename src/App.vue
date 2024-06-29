@@ -1,14 +1,7 @@
-<!-- 
-  LINKS
-  https://tailwindcss.com/docs/
-  https://fontawesome.com/search?o=r&m=free
-  https://vuejs.org/guide
-  gemini
--->
-
 
 <template>
-  <div class="flex flex-col bg-weather-primary min-h-screen"> <!-- minimal height - screen -->
+
+  <div class="flex flex-col bg-weather-primary min-h-screen mt-20"> <!-- minimal height - screen -->
     <SiteNavigation/>
     <router-view v-slot="{ Component }">
 
@@ -41,6 +34,11 @@
   .page-enter-from,
   .page-leave-to {
     opacity: 0;
+  }
+
+  .class {
+    @apply fixed top-0 w-full;
+    z-index: 10;
   }
 
 </style>

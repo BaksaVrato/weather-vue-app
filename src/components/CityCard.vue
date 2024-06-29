@@ -10,11 +10,11 @@
       </p>
       <div class="flex gap-2">
         <span class="text-sm">
-          H:
+          Highest:
           {{ Math.round(city.weather.main.temp_max) }}&deg;C
         </span>
         <span class="text-sm">
-          H:
+          Lowest:
           {{ Math.round(city.weather.main.temp_min) }}&deg;C
         </span>
       </div>
