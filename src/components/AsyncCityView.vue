@@ -5,7 +5,7 @@
       class="text-white p-4 bg-weather-secondary w-full text-center"
     >
       <p>
-        You are currently previewing this city. Click the "+" icon to exit preview.
+        You are currently previewing this city. Click the "+" to add city to front page list.
       </p>
     </div>
     <!-- weather data -->
