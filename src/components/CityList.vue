@@ -28,7 +28,7 @@ export default {
         savedCities.value.forEach(city => {
           requests.push(
             axios.get(
-              `https://api.openweathermap.org/data/2.5/weather?lat=${city.coords.lat}&lon=${city.coords.lng}&appid=81964563f5114a0a6db0b760f5b6c159&units=imperial`
+              `https://api.openweathermap.org/data/2.5/weather?lat=${city.coords.lat}&lon=${city.coords.lng}&appid=81964563f5114a0a6db0b760f5b6c159&units=metric`
               //`https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.0&appid=81964563f5114a0a6db0b760f5b6c159&units=imperial`
             )
           );
@@ -43,6 +43,9 @@ export default {
     }
 
     await getCities();
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     const goToCityView = (city) => {
       router.push({
         name: 'cityView',

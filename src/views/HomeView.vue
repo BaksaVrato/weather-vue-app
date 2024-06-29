@@ -24,8 +24,10 @@
       <div class="flex flex-col gap-4 mt-4">
         <Suspense>
           <CityList />
-          <template #fallback>
-            <p>Loading...</p>
+          <template #fallback >
+            <div v-for="n in getCountOfCities()" :key="n">
+              <CityCardSkeleton/>
+            </div>
           </template>
         </Suspense>
       </div>
@@ -39,11 +41,13 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'  // used for routing
 import CityList from '../components/CityList.vue';
+import CityCardSkeleton from '../components/CityCardSkeleton.vue';
 
 export default {
 
   components: {
-    CityList
+    CityList,
+    CityCardSkeleton
   },
   setup() { 
     const MAPBOX_TOKEN = 'pk.eyJ1IjoidnJ1dHVwIiwiYSI6ImNscGFhODk0MjA1eGcya3FyNmdtMnZ6dmQifQ.vb2ruBp2N1C0HThIrspi8A';
@@ -57,7 +61,7 @@ export default {
       const [city, state] = searchResults.place_name.split(',');
       searchQuery.value = `${city} ${state}`;
       mapboxSearchResults.value = null;
-
+      
       // push view into router (cityView concretely)
       router.push({ 
         name: 'cityView', // name of view
@@ -68,7 +72,7 @@ export default {
         query: { // query parameters (shown in URL)
           lat: searchResults.geometry.coordinates[1], 
           lng: searchResults.geometry.coordinates[0], 
-          preview: true 
+          preview: true
         }
       });
     };
@@ -96,12 +100,17 @@ export default {
       }, 300);
     };
 
+    const getCountOfCities = () => {
+      return JSON.parse(localStorage.getItem('savedCities')).length;
+    }
+
     return { 
       searchQuery, 
       getSearchResults, 
       mapboxSearchResults, 
       searchError, 
-      previewCity
+      previewCity,
+      getCountOfCities
     }
   }
 }

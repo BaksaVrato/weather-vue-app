@@ -155,6 +155,7 @@
         localStorage.setItem('savedCities', JSON.stringify(updatedCities));
         router.push({ name: 'home' });
       }
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       return {weatherData, route, removeCity}
     }

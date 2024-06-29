@@ -5,7 +5,7 @@
       <h3> {{ city.state }} </h3>
     </div>
     <div class="flex flex-col gap-2">
-      <p class="text-5xl self-end"> <!-- self-end - align right -->
+      <p class="text-3xl self-end"> <!-- self-end - align right -->
         {{ Math.round(city.weather.main.temp) }}&deg;C
       </p>
       <div class="flex gap-2">

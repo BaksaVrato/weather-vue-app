@@ -5,7 +5,7 @@
       <AsyncCityView /> <!-- default slot -->
 
       <template #fallback> <!-- slot shown while fetching -->
-        <p>Loading...</p>
+        <CityViewSkeleton />
       </template>
  
     </Suspense>
@@ -14,12 +14,14 @@
 </template>
 
 <script>
-import AsyncCityView from '../components/AsyncCityView.vue'
-
+  import AsyncCityView from '../components/AsyncCityView.vue'
+  import CityViewSkeleton from '../components/CityViewSkeleton.vue'
+  
   export default {
 
     components: {
-      AsyncCityView
+      AsyncCityView,
+      CityViewSkeleton
     }
 
 
