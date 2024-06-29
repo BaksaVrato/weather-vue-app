@@ -23,3 +23,4 @@ Weather app done with help of tutorial to get back into coding
 <img width="356" alt="image3" src="https://github.com/BaksaVrato/weather-vue-app/assets/78078457/8af48714-8f61-416e-ad8e-957e086e1e54">
 <img width="356" alt="image4" src="https://github.com/BaksaVrato/weather-vue-app/assets/78078457/34308516-35b8-43d4-8ec8-baf4ade3d28e">
 <img width="356" alt="image5" src="https://github.com/BaksaVrato/weather-vue-app/assets/78078457/a8716ae6-72d7-4b39-bd5f-56d558e7f3e1">
+<img width="356" alt="image6" src="https://github.com/BaksaVrato/weather-vue-app/assets/78078457/c8c17077-c618-4b12-8424-94cfb57cb507">
