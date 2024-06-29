@@ -18,3 +18,4 @@ Weather app done with help of tutorial to get back into coding
 - _https://www.youtube.com/watch?v=gUsBaB5ViAo&list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ_
 
 ## Images
+<img width="713" alt="image1" src="https://github.com/BaksaVrato/weather-vue-app/assets/78078457/d962ccc3-d6e4-4c9f-b445-aa4d5196cdbd">
