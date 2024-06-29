@@ -1,4 +1,3 @@
-
 <template>
 
   <div class="flex flex-col bg-weather-primary min-h-screen mt-20"> <!-- minimal height - screen -->
@@ -34,11 +33,6 @@
   .page-enter-from,
   .page-leave-to {
     opacity: 0;
-  }
-
-  .class {
-    @apply fixed top-0 w-full;
-    z-index: 10;
   }
 
 </style>

@@ -19,7 +19,7 @@ export default {
     const savedCities = ref([]);
 
     const getCities = async () => {
-      console.log(localStorage.getItem('savedCities'));
+
       if (localStorage.getItem('savedCities')) {
         savedCities.value = JSON.parse(localStorage.getItem('savedCities'));
 

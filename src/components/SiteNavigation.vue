@@ -49,16 +49,14 @@
       const modalActive = ref(false);
       const toggleModal = () => {
         modalActive.value = !modalActive.value;
-        console.log(modalActive.value);
       };
 
       const savedCities = ref([]);
       const route = useRoute();
       const router = useRouter();
       const addCity = () => {
-        console.log('Add City');
-
-      // WORKING WITH LOCAL STORAGE 
+        
+      // working with local storage
         if (localStorage.getItem('savedCities')) {
           savedCities.value = JSON.parse(localStorage.getItem('savedCities'));
         }
