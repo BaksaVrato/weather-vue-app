@@ -21,8 +21,7 @@
         <li v-if="!searchError && mapboxSearchResults.length === 0">No results found.</li>
       </ul>
          <!-- <CityList /> -->
-      <div class="flex flex-col gap-4">
-        <p>List</p>
+      <div class="flex flex-col gap-4 mt-4">
         <Suspense>
           <CityList />
           <template #fallback>

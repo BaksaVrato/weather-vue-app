@@ -79,8 +79,8 @@
 
         let query = Object.assign({}, route.query); // copy query
         delete query.preview; // remove preview from query
-        //query.id = locationObject.id; // add id to query
-        router.push({ query });
+        query.id = locationObject.id; // add id to query
+        router.replace({ query });
       };
 
       return { modalActive, toggleModal, addCity, route }
