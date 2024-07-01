@@ -6,9 +6,9 @@ Weather app done with help of tutorial to get back into coding
 - Start learning **Tailwind.css**
 
 ## Features
-- Searchbar 
+- Searchbar for searching cities (mapbox.com)
 - Adding/removing cities to front page list
-- Showing current weather
+- Showing current weather (openweathermap.org)
 
 ## Images
 <img width="356" alt="image1" src="https://github.com/BaksaVrato/weather-vue-app/assets/78078457/d962ccc3-d6e4-4c9f-b445-aa4d5196cdbd">
